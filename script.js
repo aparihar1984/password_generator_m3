@@ -9,26 +9,21 @@
 
 // Define variables (var) for numbers, upper case letters, lower case letters and special characters
 
-// Numbers Array
+// Defining Numbers Array
 var numbersArr = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 // var numbers = "0123456789"
 
-//Lower Case Letters Array
+// Defining Lower Case Letters Array
 var lowerCaseArr = ["a",  "b",  "c", "d",  "e",  "f",  "g",  "h",  "i",  "j",  "k",  "l",  "m",  "n",  "o",  "p",  "q",  "r",  "s",  "t",  "u",  "v",  "w",  "x",  "y",  "z"];
 // var lowerCase = "abcdefghijklmnopqrstuvwxyz"
 
-//Upper Case Letters Array
+// Defining Upper Case Letters Array
 var upperCaseArr = ["A",  "B",  "C",  "D",  "E",  "F",  "G",  "H",  "I",  "J",  "K",  "L",  "M",  "N",  "O",  "P",  "Q",  "R",  "S",  "T",  "U",  "V",  "W",  "X",  "Y",  "Z"];
 // var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXZ"
 
-// Special Characters Array
+// Defining Special Characters Array
 var specialCharArr = ["!",  "@",  "#",  "$",  "%",  "^",  "&",  "*",  "(",  ")",  "+",  ":",  "?",  "<",  ">",  "{",  "}",  "[",  "]", ".",  "-",  "/"];
 // var specialChar = "!@#$%^&*()+:?<>{}[].-/"
-
-// WHEN prompted for password criteria
-// THEN I select which criteria to include in the password
-
-// Define criteria prompts that must be included in the password
 
 // WHEN prompted for the length of the password
 // THEN I choose a length of at least 8 characters and no more than 128 characters
@@ -36,27 +31,34 @@ var specialCharArr = ["!",  "@",  "#",  "$",  "%",  "^",  "&",  "*",  "(",  ")",
 // Use an if statement to ensure that the user entered password is between 8 and 128 characters, or else return a prompt that states
 // "Password must between 8 and 128 characters!"
 
+// Defining The Function That Will Feature All Prompts
 function getPrompts() {
 
-  var getPasswordLength = parseInt(prompt("Choose the Number of Characters For Your Password!"));
-  if(isNaN(getPasswordLength) || getPasswordLength < 8 || getPasswordLength > 128) {
+  var getLength = parseInt(prompt("Choose the Number of Characters For Your Password!"));
+  if(isNaN(getLength) || getLength < 8 || getLength > 128) {
     alert("Invalid Input.  Please Enter A Number That Is Between 8 - 128 Digits!");
-    generatePassword();
+    // generatePassword();
+    return false;
   }
 
-  // var getPasswordLength = parseInt(prompt("Choose the Number of Characters For Your Password!"));
-  // if(getPasswordLength < 8 ) {
+  // var getLength = parseInt(prompt("Choose the Number of Characters For Your Password!"));
+  // if(getLength < 8 ) {
   //   alert("A Minimum Number of 8 Characters is Requried!");
   //   generatePassword();
   // }
-  // if(getPasswordLength > 128 ) {
+  // if(getLength > 128 ) {
   //   alert("A Maximum Number of 128 Characters is Requried!");
   //   generatePassword();
   // }
-  // if(isNaN(getPasswordLength)) {
+  // if(isNaN(getLength)) {
   //   alert("Invalid Input. Please Insert A Number!");
   //   generatePassword();
   // }
+
+  // WHEN prompted for password criteria
+  // THEN I select which criteria to include in the password
+
+  // Define criteria prompts that must be included in the password
 
   // WHEN asked for character types to include in the password
   // THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
@@ -64,34 +66,40 @@ function getPrompts() {
   // Use another if statement to ensure that the user entered password includes an upper case letter, a lower case letter, a number and 
   // a special character.  For the if statement, use the logical AND (&&) and the logical OR (||) operators.
 
-  //Confirm including lowercase letters
-  var includeLowerCase = window.confirm("Click OK to Include Lowercase Characters!");
+  // Using Confirm For Lowercase Letters
+  var confirmLowerCase = window.confirm("Click OK to Include Lower Case Characters!");
 
 
-  //Confirm including uppercase letter
-  var includeUpperCase = window.confirm("Click OK to Include Uppercase Characters!");
+  // Using Confirm For Uppercase Letters
+  var confirmUpperCase = window.confirm("Click OK to Include Upper Case Characters!");
 
 
-  //Confirm including numbers
-  var includeNumbers = window.confirm("Click OK to Include Numbers!");
+  // Using Confirm For Numbers
+  var confirmNumbers = window.confirm("Click OK to Include Numbers!");
 
 
-  //Confirm including special characters
-  var includeSpecialCharacters = window.confirm("Click OK to Include Special Characters!");
+  // Using Confirm For Special Characters
+  var confirmSpecialCharacters = window.confirm("Click OK to Include Special Characters!");
 
+  // If Statement Featuring 'AND' Logical Operator (will be true if and only if all the operands are true)
+  //   if (!confirmLowerCase && !confirmUpperCase && !confirmNumbers && !confirmSpecialCharacters) {
+  //     alert("A Minimum of 1 Character Type Is Needed!");
+  //     return;
+  // }
 
-  if (!includeLowerCase && !includeUpperCase && !includeNumbers && !includeSpecialCharacters) {
+  // If Statement Featuring Strict Equality (===) Operator (Examining Operands)
+  if (confirmLowerCase === false && confirmUpperCase === false && confirmNumbers === false && confirmSpecialCharacters === false) {
     alert("A Minimum of 1 Character Type Is Needed!");
-    return;
+    return false;
 }
 
- //stores password Info in object
+// Storing The Password Information Into an Object
  var passwordInfo = {
-  passwordLength: getPasswordLength,
-  includeLowerCase: includeLowerCase,
-  includeUpperCase: includeUpperCase,
-  includeNumbers: includeNumbers,
-  includeSpecialCharacters: includeSpecialCharacters
+  passwordLength: getLength,
+  includingLowerCase: confirmLowerCase,
+  includingUpperCase: confirmUpperCase,
+  includingNumbers: confirmNumbers,
+  includingSpecialCharacters: confirmSpecialCharacters
 };
 
 return passwordInfo; 
@@ -109,7 +117,7 @@ return passwordInfo;
 // Math.floor(Math.random() * arr.length) function
 // Use the .concat or += to add each array (upper case, lower case, etc...) to the password
 
-// Get a random character from an array
+// Generating a Random Character From An Array
 function getRandomChar(arr) {
   var randomChar = Math.floor(Math.random() * arr.length);
   var selectedChar = arr[randomChar];
@@ -117,43 +125,43 @@ function getRandomChar(arr) {
   return selectedChar;
 }
 
-// Password Generated based on the prompts entered
+// Password That Is Generated Based On The Prompts Given
 function generatePassword() {
 
-  // passwordInfo object
-  var passwordIncludes = getPrompts();
+  // passwordInfo Objects
+  var passwordObjects = getPrompts();
  
-  //store created password
+  // Storing The Created Password
   var createdPassword = [];
 
-  // Array to store types of characters to include in password
-  var availableCharacters = [];
+  // Storing The Types Of Characters Included In The Password In An Array
+  var availableChar = [];
 
-  // adds array of lower characters to array of available characters
-  if(passwordIncludes.includeLowerCase) {
-    availableCharacters = availableCharacters.concat(lowerCaseArr);
+  // Adding The Array Of Lower Characters To An Array Of Available Characters
+  if(passwordObjects.includingLowerCase) {
+    availableChar = availableChar.concat(lowerCaseArr);
   }
 
-  // adds array of upper characters to array of available characters
-  if(passwordIncludes.includeUpperCase) {
-    availableCharacters = availableCharacters.concat(upperCaseArr);
+  // Adding The Array Of Upper Characters To An Array Of Available Characters
+  if(passwordObjects.includingUpperCase) {
+    availableChar = availableChar.concat(upperCaseArr);
   }
 
-  // adds array of numbers to array of available characters
-  if(passwordIncludes.includeNumbers) {
-    availableCharacters = availableCharacters.concat(numbersArr);
+  // Adding The Array Of Numbers To An Array Of Available Characters
+  if(passwordObjects.includingNumbers) {
+    availableChar = availableChar.concat(numbersArr);
   }
 
-  // adds array of special characters to array of available characters
-  if(passwordIncludes.includeSpecialCharacters) {
-    availableCharacters = availableCharacters.concat(specialCharArr);
+  // Adding The Array Of Special Characters To An Array Of Available Characters
+  if(passwordObjects.includingSpecialCharacters) {
+    availableChar = availableChar.concat(specialCharArr);
   }
 
-  // Iterate through the password length, get random index from the array of available characters
-  for (var i = 0; i < passwordIncludes.passwordLength; i++) {
-    var c = getRandomChar(availableCharacters);
+  // For Loop Iterating Through The Password Length To Generate The Random Index From The Array Of Available Characters
+  for (var i = 0; i < passwordObjects.passwordLength; i++) {
+    var c = getRandomChar(availableChar);
 
-    // add characters to password array
+    // Creating The Password
     createdPassword.push(c);
   }
   
