@@ -39,29 +39,29 @@ The experimentation was necessary since it should be pointed out that while the 
 
 Here are the screenshots from when I entered that I wanted 5 digits in the password:
 
-"C:\Users\Ashok\utor_bootcamp_2023\module_3_javascript\password_generator_m3\Entering 5 Digits For My Password.png"
+![Alt text](<Entering 5 Digits For My Password.png>)
 
-"C:\Users\Ashok\utor_bootcamp_2023\module_3_javascript\password_generator_m3\Getting An Invalid Return.png"
+![Alt text](<Getting An Invalid Return.png>)
 
 Here are the screenshots from when I entered that I wanted 2000 digits in the password:
 
-"C:\Users\Ashok\utor_bootcamp_2023\module_3_javascript\password_generator_m3\Entering 2000 Digits For My Password.png"
+![Alt text](<Entering 2000 Digits For My Password.png>)
 
-"C:\Users\Ashok\utor_bootcamp_2023\module_3_javascript\password_generator_m3\Getting An Invalid Return.png"
+![Alt text](<Getting An Invalid Return.png>)
 
 Here are the screenshots from when I entered that I wanted 10 digits in the password:
 
-"C:\Users\Ashok\utor_bootcamp_2023\module_3_javascript\password_generator_m3\Entering 10 Digits For My Password.png"
+![Alt text](<Entering 10 Digits For My Password.png>)
 
-"C:\Users\Ashok\utor_bootcamp_2023\module_3_javascript\password_generator_m3\Including Lower Case Letters.png"
+![Alt text](<Including Lower Case Letters.png>)
 
-"C:\Users\Ashok\utor_bootcamp_2023\module_3_javascript\password_generator_m3\Including Upper Case Letters.png"
+![Alt text](<Including Upper Case Letters.png>)
 
-"C:\Users\Ashok\utor_bootcamp_2023\module_3_javascript\password_generator_m3\Including Numbers.png"
+![Alt text](<Including Numbers.png>)
 
-"C:\Users\Ashok\utor_bootcamp_2023\module_3_javascript\password_generator_m3\Including Special Characters.png"
+![Alt text](<Including Special Characters.png>)
 
-"C:\Users\Ashok\utor_bootcamp_2023\module_3_javascript\password_generator_m3\Generated Password.png"
+![Alt text](<Generated Password.png>)
 
 
 ## Deployment/Website Link
